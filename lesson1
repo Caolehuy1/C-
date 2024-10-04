@@ -1,0 +1,42 @@
+1/ Print a String to the Console
+
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("Hello World!");
+    }
+}
+
+2/ Get User Input and Print It to the Console
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.Write("Enter your name: ");
+        string userInput = Console.ReadLine();
+        Console.WriteLine("You entered: " + userInput);
+    }
+}
+
+3/Get Two Inputs from the User and Print Them on Separate Lines
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.Write("Enter the first input: ");
+        string firstInput = Console.ReadLine();
+        
+        Console.Write("Enter the second input: ");
+        string secondInput = Console.ReadLine();
+        
+        // Print the inputs on separate lines
+        Console.WriteLine($"First input:\n{firstInput}\nSecond input:\n{secondInput}");
+    }
+}
