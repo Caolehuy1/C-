@@ -1,0 +1,607 @@
+lesson 6
+method and loop 
+1. Display a Welcome Message
+
+using System;
+
+class Program
+{
+    static void DisplayWelcomeMessage()
+    {
+        Console.WriteLine("Welcome to the program!");
+    }
+}
+2/Personalized Welcome Message
+using System;
+
+class Program
+{
+    static void PersonalizedWelcomeMessage(string name)
+    {
+        Console.WriteLine($"Welcome to the program, {name}!");
+    }
+}
+
+3/ Calculate the Sum of Two Numbers
+using System;
+
+class Program
+{
+    static int CalculateSum(int a, int b)
+    {
+        return a + b;
+    }
+}
+
+4/Count the Number of Spaces in a String
+using System;
+
+class Program
+{
+    static int CountSpaces(string input)
+    {
+        int spaceCount = 0;
+        foreach (char c in input)
+        {
+            if (c == ' ')
+            {
+                spaceCount++;
+            }
+        }
+        return spaceCount;
+    }
+}
+
+5/Calculate the Sum of Elements in an Array
+using System;
+
+class Program
+{
+    static int CalculateArraySum(int[] array)
+    {
+        int sum = 0;
+        foreach (int num in array)
+        {
+            sum += num;
+        }
+        return sum;
+    }
+}
+
+6/Swap Two Integer Numbers
+using System;
+
+class Program
+{
+    static void SwapNumbers(ref int a, ref int b)
+    {
+        int temp = a;
+        a = b;
+        b = temp;
+        Console.WriteLine($"After swapping: a = {a}, b = {b}");
+    }
+}
+
+7/Calculate the Result of Raising an Integer to Another
+using System;
+
+class Program
+{
+    static void CalculateExponent(int baseNumber, int exponent)
+    {
+        double result = Math.Pow(baseNumber, exponent);
+        Console.WriteLine($"Result of {baseNumber} raised to the power of {exponent} is {result}");
+    }
+}
+
+8/Display the Fibonacci Sequence Up to a Specified Number of Terms
+using System;
+
+class Program
+{
+    static void DisplayFibonacciSequence(int terms)
+    {
+        int a = 0, b = 1, c;
+        Console.Write("Fibonacci Sequence: ");
+        for (int i = 0; i < terms; i++)
+        {
+            Console.Write(a + " ");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        Console.WriteLine();
+    }
+}
+
+9/Check Whether a Number is Prime or Not
+using System;
+
+class Program
+{
+    static void CheckPrimeNumber(int number)
+    {
+        if (number <= 1)
+        {
+            Console.WriteLine($"{number} is not a prime number.");
+            return;
+        }
+        for (int i = 2; i <= Math.Sqrt(number); i++)
+        {
+            if (number % i == 0)
+            {
+                Console.WriteLine($"{number} is not a prime number.");
+                return;
+            }
+        }
+        Console.WriteLine($"{number} is a prime number.");
+    }
+}
+
+10/. Calculate the Sum of Individual Digits of a Given Number
+using System;
+
+class Program
+{
+    static void CalculateDigitSum(int number)
+    {
+        int sum = 0;
+        while (number > 0)
+        {
+            sum += number % 10;
+            number /= 10;
+        }
+        Console.WriteLine($"Sum of digits: {sum}");
+    }
+}
+
+11/Define a Method with Named Parameters
+using System;
+
+class Program
+{
+    static void DisplayInfo(string name, int age)
+    {
+        Console.WriteLine($"Name: {name}, Age: {age}");
+    }
+
+    static void Main()
+    {
+        DisplayInfo(name: "John", age: 30);
+    }
+}
+
+12/Method with an Out Parameter to Return the Square Root
+using System;
+
+class Program
+{
+    static void GetSquareRoot(double number, out double result)
+    {
+        result = Math.Sqrt(number);
+    }
+
+    static void Main()
+    {
+        double number = 25;
+        double sqrtResult;
+        GetSquareRoot(number, out sqrtResult);
+        Console.WriteLine($"Square root of {number} is {sqrtResult}");
+    }
+}
+
+13/Method with a Default Parameter Value
+using System;
+
+class Program
+{
+    static void GreetUser(string name, string greetingMessage = "Hello")
+    {
+        Console.WriteLine($"{greetingMessage}, {name}!");
+    }
+
+    static void Main()
+    {
+        GreetUser("Alice");
+        GreetUser("Bob", "Welcome");
+    }
+}
+
+loop & while loop
+using System;
+
+class Program
+{
+    // Part 1: Print numbers from 1 to 10
+    static void PrintNumbers1To10()
+    {
+        int i = 1;
+        while (i <= 10)
+        {
+            Console.WriteLine(i);
+            i++;
+        }
+    }
+
+    // Part 2: Print numbers from 10 to 1
+    static void PrintNumbers10To1()
+    {
+        int i = 10;
+        while (i >= 1)
+        {
+            Console.WriteLine(i);
+            i--;
+        }
+    }
+
+    // Part 3: Print even numbers from 1 to 10
+    static void PrintEvenNumbers()
+    {
+        int i = 2;
+        while (i <= 10)
+        {
+            Console.WriteLine(i);
+            i += 2;
+        }
+    }
+
+    // Part 4: Print odd numbers from 1 to 10
+    static void PrintOddNumbers()
+    {
+        int i = 1;
+        while (i <= 10)
+        {
+            Console.WriteLine(i);
+            i += 2;
+        }
+    }
+
+    // Part 5: Print multiplication table for a given number
+    static void PrintMultiplicationTable(int number)
+    {
+        int i = 0;
+        while (i <= 10)
+        {
+            Console.WriteLine($"{number} * {i} = {number * i}");
+            i++;
+        }
+    }
+
+    // Part 6: Print factorial of a given number
+    static void PrintFactorial(int number)
+    {
+        int factorial = 1;
+        int i = 1;
+        while (i <= number)
+        {
+            factorial *= i;
+            i++;
+        }
+        Console.WriteLine($"The factorial of {number} is: {factorial}");
+    }
+
+    // Part 7: Print series sum 1 + 2 + 3 + ... + n
+    static void PrintSeriesSum(int number)
+    {
+        int sum = 0;
+        int i = 1;
+        while (i <= number)
+        {
+            sum += i;
+            Console.Write(i);
+            if (i < number)
+                Console.Write(" + ");
+            i++;
+        }
+        Console.WriteLine($" = {sum}");
+    }
+
+    // Part 8: Print horizontal multiplication table from 1 to n
+    static void PrintHorizontalMultiplicationTable(int n)
+    {
+        Console.WriteLine($"Multiplication table from 1 to {n}");
+        int i = 1;
+        while (i <= 10)
+        {
+            int j = 1;
+            while (j <= n)
+            {
+                Console.Write($"{j}x{i} = {j * i}");
+                if (j < n)
+                    Console.Write(", ");
+                j++;
+            }
+            Console.WriteLine();
+            i++;
+        }
+    }
+
+    // Part 9: Print right-angled triangle pattern with numbers
+    static void PrintNumberTriangle(int rows)
+    {
+        int num = 1;
+        int row = 1;
+        while (row <= rows)
+        {
+            int col = 1;
+            while (col <= row)
+            {
+                Console.Write(num);
+                num++;
+                col++;
+            }
+            Console.WriteLine();
+            row++;
+        }
+    }
+
+    // Part 10: Print right-angled triangle pattern with asterisks
+    static void PrintAsteriskTriangle(int rows)
+    {
+        int row = 1;
+        while (row <= rows)
+        {
+            int col = 1;
+            while (col <= row)
+            {
+                Console.Write("*");
+                col++;
+            }
+            Console.WriteLine();
+            row++;
+        }
+    }
+
+    // Part 11: Print pyramid pattern with numbers
+    static void PrintNumberPyramid(int rows)
+    {
+        int num = 1;
+        int i = 1;
+        while (i <= rows)
+        {
+            int j = 1;
+            // Print leading spaces
+            while (j <= rows - i)
+            {
+                Console.Write(" ");
+                j++;
+            }
+            // Print numbers
+            int k = 1;
+            while (k <= i)
+            {
+                Console.Write(num + " ");
+                num++;
+                k++;
+            }
+            Console.WriteLine();
+            i++;
+        }
+    }
+
+    static void Main()
+    {
+        // Test each part
+
+        Console.WriteLine("Part 1: Print numbers from 1 to 10");
+        PrintNumbers1To10();
+
+        Console.WriteLine("\nPart 2: Print numbers from 10 to 1");
+        PrintNumbers10To1();
+
+        Console.WriteLine("\nPart 3: Print even numbers from 1 to 10");
+        PrintEvenNumbers();
+
+        Console.WriteLine("\nPart 4: Print odd numbers from 1 to 10");
+        PrintOddNumbers();
+
+        Console.Write("\nPart 5: Enter the number for multiplication table: ");
+        int number = int.Parse(Console.ReadLine());
+        PrintMultiplicationTable(number);
+
+        Console.Write("\nPart 6: Enter the number to find factorial: ");
+        number = int.Parse(Console.ReadLine());
+        PrintFactorial(number);
+
+        Console.Write("\nPart 7: Enter the number to find series sum: ");
+        number = int.Parse(Console.ReadLine());
+        PrintSeriesSum(number);
+
+        Console.Write("\nPart 8: Enter the number to display horizontal multiplication table up to: ");
+        int n = int.Parse(Console.ReadLine());
+        PrintHorizontalMultiplicationTable(n);
+
+        Console.Write("\nPart 9: Enter the number of rows for number triangle pattern: ");
+        int rows = int.Parse(Console.ReadLine());
+        PrintNumberTriangle(rows);
+
+        Console.Write("\nPart 10: Enter the number of rows for asterisk triangle pattern: ");
+        rows = int.Parse(Console.ReadLine());
+        PrintAsteriskTriangle(rows);
+
+        Console.Write("\nPart 11: Enter the number of rows for number pyramid pattern: ");
+        rows = int.Parse(Console.ReadLine());
+        PrintNumberPyramid(rows);
+    }
+}
+loop & for loop
+1/ Display the First 10 Natural Numbers
+using System;
+
+class Program
+{
+    // Part 1: Display the first 10 natural numbers
+    static void DisplayNaturalNumbers()
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine();
+    }
+}
+
+2/Display the Cube of Numbers Up to an Integer
+using System;
+
+class Program
+{
+    // Part 2: Display the cube of numbers up to a given integer
+    static void DisplayCubes(int terms)
+    {
+        for (int i = 1; i <= terms; i++)
+        {
+            int cube = i * i * i;
+            Console.WriteLine($"Number is: {i} and cube of the {i} is: {cube}");
+        }
+    }
+}
+
+3/Display the Multiplication Table of a Given Integer
+using System;
+
+class Program
+{
+    // Part 3: Display the multiplication table of a given integer
+    static void DisplayMultiplicationTable(int number)
+    {
+        for (int i = 1; i <= 10; i++)
+        {
+            Console.WriteLine($"{number} X {i} = {number * i}");
+        }
+    }
+}
+
+4/Display an Alphabet Pattern Like Y
+using System;
+
+class Program
+{
+    // Part 4: Display an alphabet pattern like Y with an asterisk
+    static void DisplayYPattern()
+    {
+        int height = 7; // Total height of the pattern
+
+        for (int i = 0; i < height; i++)
+        {
+            if (i < height / 2)
+            {
+                for (int j = 0; j < height; j++)
+                {
+                    if (j == i || j == height - i - 1)
+                        Console.Write("*");
+                    else
+                        Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+            else
+            {
+                for (int j = 0; j < height / 2; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("*");
+            }
+        }
+    }
+}
+
+5/Character Health Regeneration
+using System;
+
+class Program
+{
+    // Part 5: Simulate character health regeneration
+    static void SimulateHealthRegeneration(int rounds, int regeneration)
+    {
+        int health = 0;
+
+        for (int i = 1; i <= rounds; i++)
+        {
+            health += regeneration;
+            Console.WriteLine($"Round {i}: Health {health}");
+        }
+    }
+}
+
+
+6/Iterate Through a List of Names
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    // Part 6: Iterate through a list of names and display each name
+    static void DisplayNames()
+    {
+        var names = new List<string> { "John", "James", "Luke", "Lila" };
+
+        foreach (var name in names)
+        {
+            Console.WriteLine($"Name: {name}");
+        }
+    }
+}
+
+7/Display the Square of Each Number in a List
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    // Part 7: Iterate through a list of numbers and display the square of each number
+    static void DisplaySquares()
+    {
+        var numbers = new List<int> { 2, 3, 4, 5 };
+
+        foreach (var number in numbers)
+        {
+            int square = number * number;
+            Console.WriteLine($"Square of {number}: {square}");
+        }
+    }
+}
+
+array method 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Test array
+        int[] numbers = { 34, 78, 12, 89, 45, 3, 67, 22, 0, -5 };
+
+        // Find and display the first element greater than 50
+        int firstGreaterThan50 = Array.Find(numbers, IsGreaterThan50);
+        Console.WriteLine("First element greater than 50: " + firstGreaterThan50);
+
+        // Find and display the first element greater than 10
+        int firstGreaterThan10 = Array.Find(numbers, IsGreaterThan10);
+        Console.WriteLine("First element greater than 10: " + firstGreaterThan10);
+
+        // Find and display the first negative number
+        int firstNegative = Array.Find(numbers, IsNegative);
+        Console.WriteLine("First negative number: " + firstNegative);
+    }
+
+    // Predicate method to check if a number is greater than 50
+    static bool IsGreaterThan50(int number)
+    {
+        return number > 50;
+    }
+
+    // Predicate method to check if a number is greater than 10
+    static bool IsGreaterThan10(int number)
+    {
+        return number > 10;
+    }
+
+    // Predicate method to check if a number is negative
+    static bool IsNegative(int number)
+    {
+        return number < 0;
+    }
+}
+
