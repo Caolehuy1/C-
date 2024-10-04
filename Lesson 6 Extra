@@ -1,0 +1,820 @@
+lessson 6 extra
+Introduction_Q2_Concatenation
+
+ 1/ Concatenate two strings (first and last name) and output the result..
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Define two strings
+        string firstName = "John";
+        string lastName = "Doe";
+
+        // Concatenate the strings
+        string fullName = firstName + " " + lastName;
+
+        // Output the result
+        Console.WriteLine("Full name: " + fullName);
+    }
+}
+
+2/Get two strings from the user, concatenate them, and output the result.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user for input
+        Console.WriteLine("Enter your first name:");
+        string firstName = Console.ReadLine();
+
+        Console.WriteLine("Enter your last name:");
+        string lastName = Console.ReadLine();
+
+        // Concatenate the strings
+        string fullName = firstName + " " + lastName;
+
+        // Output the result
+        Console.WriteLine("Full name: " + fullName);
+    }
+}
+
+3/Concatenate three strings (first name, middle name, and last name) and output the result.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user for input
+        Console.WriteLine("Enter your first name:");
+        string firstName = Console.ReadLine();
+
+        Console.WriteLine("Enter your middle name:");
+        string middleName = Console.ReadLine();
+
+        Console.WriteLine("Enter your last name:");
+        string lastName = Console.ReadLine();
+
+        // Concatenate the strings
+        string fullName = firstName + " " + middleName + " " + lastName;
+
+        // Output the result
+        Console.WriteLine("Full name: " + fullName);
+    }
+}
+4/Concatenate a string and an integer (if the player's name has numbers) and output the result.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user for input
+        Console.WriteLine("Enter your player name:");
+        string playerName = Console.ReadLine();
+
+        Console.WriteLine("Enter a number:");
+        // Read the number as a string, then convert it to an integer
+        int number = int.Parse(Console.ReadLine());
+
+        // Concatenate the string and integer
+        string result = playerName + " " + number;
+
+        // Output the result
+        Console.WriteLine("Result: " + result);
+    }
+}
+
+Conversion
+1/Calculate the BMI using height in meters and weight in kilograms.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Get user input
+        Console.Write("Enter your height in meters: ");
+        double height = double.Parse(Console.ReadLine());
+
+        Console.Write("Enter your weight in kilograms: ");
+        double weight = double.Parse(Console.ReadLine());
+
+        // Calculate BMI
+        double bmi = weight / (height * height);
+
+        // Display BMI
+        Console.WriteLine($"Your BMI is {bmi:F1}");
+
+        // Display the BMI category
+        if (bmi < 18.5)
+        {
+            Console.WriteLine("You are Underweight");
+        }
+        else if (bmi >= 18.5 && bmi < 25)
+        {
+            Console.WriteLine("You are Normal");
+        }
+        else if (bmi >= 25 && bmi < 30)
+        {
+            Console.WriteLine("You are Overweight");
+        }
+        else
+        {
+            Console.WriteLine("You are Obese");
+        }
+    }
+}
+2/Calculate BMI using height in feet and inches, and weight in pounds.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Get user input
+        Console.Write("Enter your height in feet: ");
+        int feet = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter your height in inches: ");
+        int inches = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter your weight in pounds: ");
+        double weight = double.Parse(Console.ReadLine());
+
+        // Convert height to inches and then to meters
+        double totalInches = (feet * 12) + inches;
+        double heightInMeters = totalInches * 0.0254;
+
+        // Calculate BMI
+        double bmi = (weight * 703) / (totalInches * totalInches);
+
+        // Display BMI
+        Console.WriteLine($"Your BMI is {bmi:F1}");
+
+        // Display the BMI category
+        if (bmi < 18.5)
+        {
+            Console.WriteLine("You are Underweight");
+        }
+        else if (bmi >= 18.5 && bmi < 25)
+        {
+            Console.WriteLine("You are Normal");
+        }
+        else if (bmi >= 25 && bmi < 30)
+        {
+            Console.WriteLine("You are Overweight");
+        }
+        else
+        {
+            Console.WriteLine("You are Obese");
+        }
+    }
+}
+3/Convert the player's score from an integer to a double and display it with one decimal place.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Player's score
+        int score = 100;
+
+        // Convert to double and display with one decimal place
+        double scoreDouble = (double)score;
+        Console.WriteLine($"Player's Score with one decimal place: {scoreDouble:F1}");
+    }
+}
+4/Convert the player's health from a double to an integer percentage and print the result.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Player's health as a double
+        double health = 0.75;
+
+        // Convert to integer percentage
+        int healthPercentage = (int)(health * 100);
+
+        // Display the result
+        Console.WriteLine($"Player's Health as a percentage: {healthPercentage}%");
+    }
+}
+5/Convert the player's coins from a double to an integer (rounded down) and print the result.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Player's coins as a double
+        double coins = 123.45;
+
+        // Convert to integer (rounded down)
+        int coinsInteger = (int)coins;
+
+        // Display the result
+        Console.WriteLine($"Player's Coins as an integer: {coinsInteger}");
+    }
+}
+
+6/onvert the player's progress from a boolean to a string ("Completed" or "Incomplete").
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Player's progress as a boolean
+        bool progress = true;
+
+        // Convert boolean to string
+        string progressString = progress ? "Completed" : "Incomplete";
+
+        // Display the result
+        Console.WriteLine($"Player's Progress as a string: {progressString}");
+    }
+}
+
+DDP
+try-catch
+1/Dividing Two Numbers and Handling Exceptions
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            int numerator = 10;
+            int denominator = 0;
+            int result = numerator / denominator;
+            Console.WriteLine($"Result: {result}");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            // Catch any other exceptions
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}
+
+2/Converting a String to an Integer and Handling Exceptions
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            string input = "abc";
+            int number = int.Parse(input);
+            Console.WriteLine($"Converted number: {number}");
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            // Catch any other exceptions
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}
+
+3/Opening a File and Handling Exceptions
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            string filePath = "nonexistentfile.txt";
+            using (StreamReader sr = new StreamReader(filePath))
+            {
+                string content = sr.ReadToEnd();
+                Console.WriteLine(content);
+            }
+        }
+        catch (FileNotFoundException ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+        catch (IOException ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            // Catch any other exceptions
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}
+
+4/Reading Input from the User and Handling Exceptions
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            Console.Write("Enter some input: ");
+            string input = Console.ReadLine();
+            Console.WriteLine($"You entered: {input}");
+        }
+        catch (Exception ex)
+        {
+            // Catch any exceptions that occur during input
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}
+
+5/ Performing a Calculation and Handling Exceptions
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            int a = 5;
+            int b = 0; // This could be any invalid operand
+            int result = a / b; // This will throw DivideByZeroException if b is zero
+            Console.WriteLine($"Result: {result}");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            // Catch any other exceptions
+            Console.WriteLine($"Exception: {ex.Message}");
+        }
+    }
+}
+Exceptions
+using System;
+
+class Program
+{
+    // Part 1: Divide two numbers with exception handling for non-numeric values and division by zero
+    static void DivideNumbers()
+    {
+        Console.Write("Enter the first number: ");
+        string input1 = Console.ReadLine();
+        Console.Write("Enter the second number: ");
+        string input2 = Console.ReadLine();
+
+        try
+        {
+            // Try parsing the inputs to double
+            if (double.TryParse(input1, out double num1) && double.TryParse(input2, out double num2))
+            {
+                // Perform division and handle division by zero
+                if (num2 == 0)
+                {
+                    throw new DivideByZeroException("The denominator cannot be zero.");
+                }
+
+                double result = num1 / num2;
+                Console.WriteLine($"Result: {result}");
+            }
+            else
+            {
+                throw new FormatException("Input is not a valid number.");
+            }
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"Format error: {ex.Message}");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine($"Division error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+    }
+
+    // Part 2: Convert a string to an integer with exception handling
+    static void ConvertToInteger()
+    {
+        Console.Write("Enter a number: ");
+        string input = Console.ReadLine();
+
+        try
+        {
+            if (int.TryParse(input, out int number))
+            {
+                Console.WriteLine($"The number is: {number}");
+            }
+            else
+            {
+                throw new FormatException("Input is not a valid integer.");
+            }
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"Format error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+    }
+
+    // Part 3: Method to divide two numbers with exception handling for division by zero
+    static void Divide(double numerator, double denominator)
+    {
+        try
+        {
+            if (denominator == 0)
+            {
+                throw new DivideByZeroException("The denominator cannot be zero.");
+            }
+
+            double result = numerator / denominator;
+            Console.WriteLine($"Result of division: {result}");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine($"Division error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+    }
+
+    // Part 4: Method to convert a string to uppercase with exception handling for null input
+    static void ConvertToUppercase(string input)
+    {
+        try
+        {
+            if (input == null)
+            {
+                throw new NullReferenceException("Input string cannot be null.");
+            }
+
+            string uppercased = input.ToUpper();
+            Console.WriteLine($"Uppercased string: {uppercased}");
+        }
+        catch (NullReferenceException ex)
+        {
+            Console.WriteLine($"Null reference error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An unexpected error occurred: {ex.Message}");
+        }
+    }
+
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Part 1: Divide Two Numbers");
+        DivideNumbers();
+        
+        Console.WriteLine("\nPart 2: Convert String to Integer");
+        ConvertToInteger();
+        
+        Console.WriteLine("\nPart 3: Divide Method");
+        // Example usage of the Divide method
+        Divide(10, 2);
+        Divide(10, 0); // This will cause DivideByZeroException
+        
+        Console.WriteLine("\nPart 4: Convert String to Uppercase");
+        // Example usage of the ConvertToUppercase method
+        ConvertToUppercase("hello world");
+        ConvertToUppercase(null); // This will cause NullReferenceException
+    }
+}
+FileIO
+1/Telephone Directory
+using System;
+using System.IO;
+
+class TelephoneDirectory
+{
+    static void Main(string[] args)
+    {
+        string filePath = "PhoneDirectory.csv";
+
+        // Check if the file exists; if not, create it and add a header
+        if (!File.Exists(filePath))
+        {
+            using (StreamWriter sw = File.CreateText(filePath))
+            {
+                sw.WriteLine("Name,Phone Number");
+            }
+        }
+
+        int recordCount = 0;
+        string inputName, inputPhoneNumber;
+        do
+        {
+            Console.Write("Enter name (or 'Exit' to quit): ");
+            inputName = Console.ReadLine();
+            if (inputName.ToLower() == "exit")
+                break;
+
+            Console.Write("Enter phone number: ");
+            inputPhoneNumber = Console.ReadLine();
+
+            using (StreamWriter sw = File.AppendText(filePath))
+            {
+                sw.WriteLine($"{inputName},{inputPhoneNumber}");
+            }
+
+            recordCount++;
+        } while (true);
+
+        Console.WriteLine($"Number of records appended: {recordCount}");
+    }
+}
+2/Library Loan Processing
+using System;
+using System.Globalization;
+using System.IO;
+
+class LibraryLoan
+{
+    static void Main(string[] args)
+    {
+        string inputFile = "loaninfo.csv";
+        string outputFile = "overdueinfo.csv";
+
+        try
+        {
+            // Read all lines from the file
+            string[] lines = File.ReadAllLines(inputFile);
+
+            // Create the output file for writing
+            using (StreamWriter sw = new StreamWriter(outputFile))
+            {
+                // Print header to console
+                Console.WriteLine("{0,-10} {1,-12} {2,-14} {3,-14} {4,-12} {5,-13} {6,-8}", "Book ID", "Borrower ID", "Date Borrowed", "Date Returned", "Days Loaned", "Days Overdue", "Fine");
+
+                // Write header to output file
+                sw.WriteLine("Book ID, Borrower ID, Days Overdue, Fine");
+
+                // Process each line
+                for (int i = 1; i < lines.Length; i++)
+                {
+                    string[] parts = lines[i].Split(',');
+
+                    // Extract data
+                    string bookID = parts[0];
+                    string borrowerID = parts[1];
+                    DateTime dateBorrowed = DateTime.ParseExact(parts[2], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+                    DateTime dateReturned = DateTime.ParseExact(parts[3], "yyyy-MM-dd", CultureInfo.InvariantCulture);
+
+                    // Calculate days loaned and overdue
+                    int daysLoaned = (dateReturned - dateBorrowed).Days;
+                    int daysOverdue = Math.Max(daysLoaned - 14, 0);
+                    double fine = daysOverdue * 0.50;
+
+                    // Display data
+                    Console.WriteLine($"{bookID,-10} {borrowerID,-12} {dateBorrowed:yyyy-MM-dd,-14} {dateReturned:yyyy-MM-dd,-14} {daysLoaned,-12} {daysOverdue,-13} ${fine,-8:F2}");
+
+                    // Write to output file if overdue
+                    if (daysOverdue > 0)
+                    {
+                        sw.WriteLine($"{bookID}, {borrowerID}, {daysOverdue}, ${fine:F2}");
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"An error occurred: {e.Message}");
+        }
+    }
+}
+
+DateTime
+using System;
+
+class DateTimePrograms
+{
+    static void Main(string[] args)
+    {
+        // Part 1: Add and Subtract Days from the Date
+        AddSubtractDays();
+
+        // Part 2: Calculate Age from Date of Birth
+        CalculateAge();
+
+        // Part 3: Calculate Difference Between Two Dates
+        CalculateDateDifference();
+
+        // Part 4: Convert Days into Years, Weeks, and Days
+        ConvertDays();
+
+        // Part 5: Print Day Name of the Week from Number
+        PrintDayName();
+
+        // Part 6: Retrieve the Current Date
+        RetrieveCurrentDate();
+
+        // Part 7: Retrieve the Current Date and Time
+        RetrieveCurrentDateTime();
+    }
+
+    // Part 1: Add and Subtract Days from the Date
+    static void AddSubtractDays()
+    {
+        Console.Write("Enter the date (dd/MM/yyyy): ");
+        DateTime date = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+        Console.Write("Enter the number of days to add or subtract: ");
+        int days = int.Parse(Console.ReadLine());
+
+        DateTime dateAfter = date.AddDays(days);
+        DateTime dateBefore = date.AddDays(-days);
+
+        Console.WriteLine($"Date after {days} days: {dateAfter:dd/MM/yyyy}");
+        Console.WriteLine($"Date before {days} days: {dateBefore:dd/MM/yyyy}");
+    }
+
+    // Part 2: Calculate Age from Date of Birth
+    static void CalculateAge()
+    {
+        Console.Write("Enter your date of birth (dd/MM/yyyy): ");
+        DateTime birthDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+        DateTime today = DateTime.Today;
+
+        int ageYears = today.Year - birthDate.Year;
+        if (birthDate.Date > today.AddYears(-ageYears)) ageYears--;
+
+        int ageMonths = today.Month - birthDate.Month;
+        if (birthDate.Month > today.Month || (birthDate.Month == today.Month && birthDate.Day > today.Day)) ageMonths--;
+
+        int ageDays = today.Day - birthDate.Day;
+        if (birthDate.Day > today.Day) ageDays += DateTime.DaysInMonth(today.Year, today.Month - 1);
+
+        Console.WriteLine($"You are {ageYears} years, {ageMonths} months, {ageDays} days old");
+    }
+
+    // Part 3: Calculate Difference Between Two Dates
+    static void CalculateDateDifference()
+    {
+        Console.Write("Enter the first date (dd/MM/yyyy): ");
+        DateTime firstDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+        Console.Write("Enter the second date (dd/MM/yyyy): ");
+        DateTime secondDate = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+        TimeSpan difference = secondDate - firstDate;
+        Console.WriteLine($"The difference between two dates is: {difference.Days} days");
+    }
+
+    // Part 4: Convert Days into Years, Weeks, and Days
+    static void ConvertDays()
+    {
+        Console.Write("Enter the number of days: ");
+        int totalDays = int.Parse(Console.ReadLine());
+
+        int years = totalDays / 365;
+        int weeks = (totalDays % 365) / 7;
+        int days = (totalDays % 365) % 7;
+
+        Console.WriteLine($"Years: {years}");
+        Console.WriteLine($"Weeks: {weeks}");
+        Console.WriteLine($"Days: {days}");
+    }
+
+    // Part 5: Print Day Name of the Week from Number
+    static void PrintDayName()
+    {
+        Console.Write("Enter the number of the day (1-7, where 1 is Sunday): ");
+        int dayNumber = int.Parse(Console.ReadLine());
+
+        if (dayNumber < 1 || dayNumber > 7)
+        {
+            Console.WriteLine("Invalid day number. It should be between 1 and 7.");
+            return;
+        }
+
+        DayOfWeek day = (DayOfWeek)(dayNumber - 1);
+        Console.WriteLine($"Day name: {day}");
+    }
+
+    // Part 6: Retrieve the Current Date
+    static void RetrieveCurrentDate()
+    {
+        DateTime today = DateTime.Today;
+        Console.WriteLine($"The current date is: {today:dd/MM/yyyy}");
+    }
+
+    // Part 7: Retrieve the Current Date and Time
+    static void RetrieveCurrentDateTime()
+    {
+        DateTime now = DateTime.Now;
+        Console.WriteLine($"The current date and time is: {now:dd/MM/yyyy HH:mm:ss}");
+    }
+}
+Marth_Funtions
+using System;
+
+class MathOperations
+{
+    static void Main(string[] args)
+    {
+        // Part 1: Calculate the minimum of two numbers
+        Console.Write("Enter the first number: ");
+        int num1 = int.Parse(Console.ReadLine());
+        Console.Write("Enter the second number: ");
+        int num2 = int.Parse(Console.ReadLine());
+        int min = Math.Min(num1, num2);
+        Console.WriteLine($"The minimum of {num1} and {num2} is {min}");
+
+        // Part 2: Calculate the maximum of two numbers
+        Console.Write("Enter the first number: ");
+        int num3 = int.Parse(Console.ReadLine());
+        Console.Write("Enter the second number: ");
+        int num4 = int.Parse(Console.ReadLine());
+        int max = Math.Max(num3, num4);
+        Console.WriteLine($"The maximum of {num3} and {num4} is {max}");
+
+        // Part 3: Calculate the square root of a number
+        Console.Write("Enter a number: ");
+        double num5 = double.Parse(Console.ReadLine());
+        double sqrt = Math.Sqrt(num5);
+        Console.WriteLine($"The square root of {num5} is {sqrt}");
+
+        // Part 4: Calculate the absolute value of a number
+        Console.Write("Enter a number: ");
+        int num6 = int.Parse(Console.ReadLine());
+        int abs = Math.Abs(num6);
+        Console.WriteLine($"The absolute value of {num6} is {abs}");
+
+        // Part 5: Calculate the power of a number
+        Console.Write("Enter the base number: ");
+        double baseNum = double.Parse(Console.ReadLine());
+        Console.Write("Enter the exponent: ");
+        double exponent = double.Parse(Console.ReadLine());
+        double power = Math.Pow(baseNum, exponent);
+        Console.WriteLine($"{baseNum} raised to the power of {exponent} is {power}");
+
+        // Part 6: Round a number to the nearest integer
+        Console.Write("Enter a number: ");
+        double num7 = double.Parse(Console.ReadLine());
+        double rounded = Math.Round(num7);
+        Console.WriteLine($"{num7} rounded to the nearest integer is {rounded}");
+
+        // Part 7: Find the smallest integer greater than or equal to a number
+        Console.Write("Enter a number: ");
+        double num8 = double.Parse(Console.ReadLine());
+        double ceiling = Math.Ceiling(num8);
+        Console.WriteLine($"The smallest integer greater than or equal to {num8} is {ceiling}");
+
+        // Part 8: Find the largest integer less than or equal to a number
+        Console.Write("Enter a number: ");
+        double num9 = double.Parse(Console.ReadLine());
+        double floor = Math.Floor(num9);
+        Console.WriteLine($"The largest integer less than or equal to {num9} is {floor}");
+
+        // Part 9: Calculate e raised to the power of a number
+        Console.Write("Enter a number: ");
+        double num10 = double.Parse(Console.ReadLine());
+        double exp = Math.Exp(num10);
+        Console.WriteLine($"e raised to the power of {num10} is {exp}");
+
+        // Part 10: Calculate the natural logarithm of a number
+        Console.Write("Enter a number: ");
+        double num11 = double.Parse(Console.ReadLine());
+        double log = Math.Log(num11);
+        Console.WriteLine($"The natural logarithm of {num11} is {log}");
+
+        // Part 11: Generate a random number between 1 and 100
+        Random random = new Random();
+        int randomNum = random.Next(1, 101); // Next(maxValue) is exclusive, so use 101 to include 100
+        Console.WriteLine($"A random number between 1 and 100 is {randomNum}");
+    }
+}
+
