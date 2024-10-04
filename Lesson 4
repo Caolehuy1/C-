@@ -1,0 +1,723 @@
+lesson 4 : list
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: Create a list of 5 names and print them out
+        List<string> names = new List<string>
+        {
+            "Alice",
+            "Bob",
+            "Charlie",
+            "David",
+            "Eve"
+        };
+
+        Console.WriteLine("Part 1: List of names:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+
+        // Part 2: Find and print the name in the 3rd position
+        Console.WriteLine("\nPart 2: Name in the 3rd position:");
+        Console.WriteLine(names[2]);
+
+        // Part 3: Remove the name in the 2nd position and print the list
+        names.RemoveAt(1);
+        Console.WriteLine("\nPart 3: List after removing the name in the 2nd position:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+
+        // Part 4: Add a new name to the list and print the list
+        names.Add("Frank");
+        Console.WriteLine("\nPart 4: List after adding a new name:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+
+        // Part 5: Find and print the length of the list
+        Console.WriteLine("\nPart 5: Length of the list:");
+        Console.WriteLine(names.Count);
+
+        // Part 6: Check if a name exists in the list and print the result
+        string nameToCheck = "Charlie";
+        bool exists = names.Contains(nameToCheck);
+        Console.WriteLine($"\nPart 6: Does '{nameToCheck}' exist in the list?");
+        Console.WriteLine(exists ? "Yes" : "No");
+
+        // Part 7: Find the index of a name in the list and print it
+        int index = names.IndexOf("David");
+        Console.WriteLine($"\nPart 7: Index of 'David' in the list:");
+        Console.WriteLine(index);
+
+        // Part 8: Insert a new name at the 3rd position and print the list
+        names.Insert(2, "Grace");
+        Console.WriteLine("\nPart 8: List after inserting a new name at the 3rd position:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+
+        // Part 9: Sort the list and print it
+        names.Sort();
+        Console.WriteLine("\nPart 9: Sorted list:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+
+        // Part 10: Find the last index of a name and print it
+        names.Add("Alice"); // Adding a duplicate to test FindLastIndex
+        int lastIndex = names.FindLastIndex(name => name == "Alice");
+        Console.WriteLine($"\nPart 10: Last index of 'Alice' in the list:");
+        Console.WriteLine(lastIndex);
+
+        // Part 11: Clear the list and print it
+        names.Clear();
+        Console.WriteLine("\nPart 11: List after clearing:");
+        Console.WriteLine(names.Count == 0 ? "The list is empty." : "The list is not empty.");
+
+        // Part 12: Create a new list of strings and integers and print them out
+        List<string> stringList = new List<string> { "Red", "Green", "Blue" };
+        List<int> intList = new List<int> { 1, 2, 3 };
+
+        Console.WriteLine("\nPart 12: List of strings:");
+        foreach (string str in stringList)
+        {
+            Console.WriteLine(str);
+        }
+
+        Console.WriteLine("\nPart 12: List of integers:");
+        foreach (int number in intList)
+        {
+            Console.WriteLine(number);
+        }
+    }
+}
+array
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: Create an array of 5 countries and print them out
+        string[] countries = new string[5] { "USA", "Canada", "Mexico", "Brazil", "Argentina" };
+
+        Console.WriteLine("Part 1: Array of countries:");
+        foreach (string country in countries)
+        {
+            Console.WriteLine(country);
+        }
+
+        // Part 2: Access and print the name in the 3rd position
+        Console.WriteLine("\nPart 2: Country in the 3rd position:");
+        Console.WriteLine(countries[2]);
+
+        // Part 3: Remove the name in the 2nd position
+        // Arrays in C# are fixed-size, so we cannot remove elements directly.
+        // Instead, we'll create a new array without the element at the 2nd position.
+
+        string[] updatedCountries = new string[countries.Length - 1];
+        for (int i = 0, j = 0; i < countries.Length; i++)
+        {
+            if (i != 1) // Skip the element at index 1
+            {
+                updatedCountries[j++] = countries[i];
+            }
+        }
+
+        Console.WriteLine("\nPart 3: Array after removing the name in the 2nd position:");
+        foreach (string country in updatedCountries)
+        {
+            Console.WriteLine(country);
+        }
+
+        // Part 4: Replace the name in the 3rd position with a new name
+        countries[2] = "Chile"; // Replace "Mexico" with "Chile"
+
+        Console.WriteLine("\nPart 4: Array after replacing the name in the 3rd position:");
+        foreach (string country in countries)
+        {
+            Console.WriteLine(country);
+        }
+
+        // Part 5: Find and print the length of the array
+        Console.WriteLine("\nPart 5: Length of the array:");
+        Console.WriteLine(countries.Length);
+
+        // Part 6: Check if a name exists in the array
+        string nameToCheck = "Brazil";
+        bool exists = Array.Exists(countries, country => country == nameToCheck);
+        Console.WriteLine($"\nPart 6: Does '{nameToCheck}' exist in the array?");
+        Console.WriteLine(exists ? "Yes" : "No");
+
+        // Part 7: Find the index of a name in the array
+        int index = Array.IndexOf(countries, "Canada");
+        Console.WriteLine($"\nPart 7: Index of 'Canada' in the array:");
+        Console.WriteLine(index);
+    }
+}
+sting
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: Concatenate three strings and output the result in uppercase
+        string str1 = "hello";
+        string str2 = "world";
+        string str3 = "csharp";
+        string concatenatedUpper = (str1 + str2 + str3).ToUpper();
+        Console.WriteLine("Part 1: " + concatenatedUpper);
+
+        // Part 2: Concatenate three strings and output the result in lowercase
+        string concatenatedLower = (str1 + str2 + str3).ToLower();
+        Console.WriteLine("Part 2: " + concatenatedLower);
+
+        // Part 3: Find the length of a string
+        string exampleString = "Hello, World!";
+        int length = exampleString.Length;
+        Console.WriteLine("Part 3: Length of the string is " + length);
+
+        // Part 4: Find the index of a character in a string
+        char charToFind = 'W';
+        int index = exampleString.IndexOf(charToFind);
+        Console.WriteLine("Part 4: Index of character '" + charToFind + "' is " + index);
+
+        // Part 5: Find the index of a character in a string starting from a specified position
+        int startIndex = 5;
+        int indexFromStart = exampleString.IndexOf(charToFind, startIndex);
+        Console.WriteLine("Part 5: Index of character '" + charToFind + "' starting from index " + startIndex + " is " + indexFromStart);
+
+        // Part 6: Count the occurrences of a specific character in a string
+        char charToCount = 'o';
+        int count = 0;
+        foreach (char c in exampleString)
+        {
+            if (c == charToCount)
+            {
+                count++;
+            }
+        }
+        Console.WriteLine("Part 6: Character '" + charToCount + "' occurs " + count + " times");
+
+        // Part 7: Replace a character in a string with another character
+        string replacedString = exampleString.Replace('o', '0');
+        Console.WriteLine("Part 7: String after replacement: " + replacedString);
+
+        // Part 8: Remove a character from a string
+        string stringWithoutChar = exampleString.Remove(exampleString.IndexOf('o'), 1);
+        Console.WriteLine("Part 8: String after removing the first occurrence of 'o': " + stringWithoutChar);
+
+        // Part 9: Replace all occurrences of a specific character in a string with another character
+        string replacedAllString = exampleString.Replace('o', '0');
+        Console.WriteLine("Part 9: String after replacing all 'o' with '0': " + replacedAllString);
+
+        // Part 10: Extract a substring from a string
+        string substring = exampleString.Substring(7, 5); // Extracts "World"
+        Console.WriteLine("Part 10: Extracted substring: " + substring);
+
+        // Part 11: Extract a substring from a string starting from a specified position
+        string substringFromPosition = exampleString.Substring(7); // Extracts "World!"
+        Console.WriteLine("Part 11: Extracted substring from position 7: " + substringFromPosition);
+
+        // Part 12: Remove leading and trailing whitespace from a string
+        string stringWithSpaces = "   Trim me!   ";
+        string trimmedString = stringWithSpaces.Trim();
+        Console.WriteLine("Part 12: String after trimming: '" + trimmedString + "'");
+
+        // Part 13: Parse a string to a number
+        string numberString = "1234";
+        int parsedNumber = int.Parse(numberString);
+        Console.WriteLine("Part 13: Parsed number: " + parsedNumber);
+
+        // Part 14: Convert a number to a string
+        int number = 5678;
+        string numberToString = number.ToString();
+        Console.WriteLine("Part 14: Number converted to string: " + numberToString);
+    }
+}
+formating 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: Personalized event invitations
+        string recipientName = "Alice";
+        string eventDate = "January 15, 2025";
+        string currentTime = "09:00";
+        string invitation = $"Hello, {recipientName}! You're invited to our team outing on {eventDate}. The event starts at {currentTime}.";
+        Console.WriteLine("Part 1: " + invitation);
+
+        // Part 2: Order confirmation emails
+        string customerName = "John Doe";
+        string orderId = "123456";
+        string purchaseDetails = "2 x T-shirts, 3 x Jeans";
+        string orderConfirmation = $"Dear {customerName}, your order (ID: {orderId}) has been confirmed. You've purchased: {purchaseDetails}.";
+        Console.WriteLine("Part 2: " + orderConfirmation);
+
+        // Part 3: Task reminders
+        string taskName = "Complete Project Proposal";
+        string dueDate = "May 10, 2025";
+        string priorityLevel = "High";
+        string taskReminder = $"Reminder: {taskName} is due on {dueDate}. Priority: {priorityLevel}.";
+        Console.WriteLine("Part 3: " + taskReminder);
+
+        // Part 4: Event reminders
+        string eventTitle = "Team Meeting";
+        string location = "Conference Room A";
+        string startTime = "10:00 AM";
+        string eventReminder = $"Reminder: {eventTitle} at {location} starts at {startTime}.";
+        Console.WriteLine("Part 4: " + eventReminder);
+
+        // Part 5: Flight departure information
+        string flightNumber = "ABC123";
+        string departureAirport = "JFK International Airport";
+        string scheduledTime = "08:30 AM";
+        string flightDeparture = $"Flight {flightNumber} departing from {departureAirport} is scheduled for {scheduledTime}.";
+        Console.WriteLine("Part 5: " + flightDeparture);
+
+        // Part 6: User greeting
+        Console.Write("Enter your name: ");
+        string userName = Console.ReadLine();
+        string userGreeting = $"Hello, {userName}! Welcome to our messaging app.";
+        Console.WriteLine("Part 6: " + userGreeting);
+
+        // Part 7: Custom badges
+        Console.Write("Enter your character's name: ");
+        string characterName = Console.ReadLine();
+        Console.Write("Enter your character's class: ");
+        string characterClass = Console.ReadLine();
+        string customBadge = $"Custom Badge: {characterName} the {characterClass}";
+        Console.WriteLine("Part 7: " + customBadge);
+
+        // Part 8: Song duration
+        Console.Write("Enter the song's duration in seconds: ");
+        int songDurationSeconds = int.Parse(Console.ReadLine());
+        int minutes = songDurationSeconds / 60;
+        int seconds = songDurationSeconds % 60;
+        string songDuration = $"Song Duration: {minutes} minutes {seconds} seconds";
+        Console.WriteLine("Part 8: " + songDuration);
+
+        // Part 9: Serving size
+        Console.Write("Enter the number of servings: ");
+        int servings = int.Parse(Console.ReadLine());
+        string servingSize = $"Serving Size: {servings,5}";
+        Console.WriteLine("Part 9: " + servingSize);
+
+        // Part 10: Account balance
+        Console.Write("Enter the account balance: ");
+        decimal accountBalance = decimal.Parse(Console.ReadLine());
+        string formattedBalance = $"Account Balance: {accountBalance,15:F2}";
+        Console.WriteLine("Part 10: " + formattedBalance);
+
+        // Part 11: Ticket price with discount
+        Console.Write("Enter the ticket price: ");
+        decimal ticketPrice = decimal.Parse(Console.ReadLine());
+        Console.Write("Enter the discount percentage: ");
+        decimal discountPercentage = decimal.Parse(Console.ReadLine());
+        decimal discountAmount = ticketPrice * (discountPercentage / 100);
+        decimal discountedPrice = ticketPrice - discountAmount;
+        string formattedDiscountedPrice = $"Discounted Price: {discountedPrice,10:F2}";
+        Console.WriteLine("Part 11: " + formattedDiscountedPrice);
+
+        // Part 12: Player's score
+        Console.Write("Enter the player's score: ");
+        int playerScore = int.Parse(Console.ReadLine());
+        string playerScoreDisplay = $"Player's Score: {playerScore,8}";
+        Console.WriteLine("Part 12: " + playerScoreDisplay);
+
+        // Part 13: Average value of a dataset
+        Console.Write("Enter a series of numbers separated by spaces: ");
+        string[] numberStrings = Console.ReadLine().Split(' ');
+        int[] numbers = Array.ConvertAll(numberStrings, int.Parse);
+        decimal averageValue = (decimal)numbers.Average();
+        string formattedAverage = $"Average Value: {averageValue,8:F2}";
+        Console.WriteLine("Part 13: " + formattedAverage);
+
+        // Part 14: Average temperature
+        Console.Write("Enter temperatures for 3 days separated by spaces: ");
+        string[] tempStrings = Console.ReadLine().Split(' ');
+        decimal[] temperatures = Array.ConvertAll(tempStrings, decimal.Parse);
+        decimal avgTemperature = temperatures.Average();
+        string formattedTemperature = $"Average Temperature: {avgTemperature,6:F1}";
+        Console.WriteLine("Part 14: " + formattedTemperature);
+
+        // Part 15: Step count
+        Console.Write("Enter the steps taken: ");
+        int stepCount = int.Parse(Console.ReadLine());
+        string formattedSteps = $"Step Count: {stepCount,6}";
+        Console.WriteLine("Part 15: " + formattedSteps);
+    }
+}
+class
+1/player
+using System;
+
+public class Player
+{
+    public string Name { get; set; }
+    public int Level { get; private set; }
+    public int HealthPoints { get; private set; }
+    public int ExperiencePoints { get; private set; }
+
+    public Player(string name, int level, int healthPoints, int experiencePoints)
+    {
+        Name = name;
+        Level = level;
+        HealthPoints = healthPoints;
+        ExperiencePoints = experiencePoints;
+    }
+
+    public void LevelUp()
+    {
+        Level++;
+        Console.WriteLine($"{Name} has leveled up to Level {Level}!");
+    }
+
+    public void Heal(int amount)
+    {
+        HealthPoints += amount;
+        Console.WriteLine($"{Name} healed for {amount} HP. Current HP: {HealthPoints}");
+    }
+
+    public void GainExperience(int amount)
+    {
+        ExperiencePoints += amount;
+        Console.WriteLine($"{Name} gained {amount} XP. Total XP: {ExperiencePoints}");
+    }
+}
+2/ enemy 
+using System;
+
+public class Enemy
+{
+    public string Name { get; set; }
+    public int HealthPoints { get; private set; }
+    public int AttackPower { get; set; }
+    public int Defense { get; set; }
+
+    public Enemy(string name, int healthPoints, int attackPower, int defense)
+    {
+        Name = name;
+        HealthPoints = healthPoints;
+        AttackPower = attackPower;
+        Defense = defense;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        int actualDamage = Math.Max(damage - Defense, 0);
+        HealthPoints -= actualDamage;
+        if (HealthPoints < 0) HealthPoints = 0;
+        Console.WriteLine($"{Name} took {actualDamage} damage. Remaining HP: {HealthPoints}");
+    }
+
+    public int Attack()
+    {
+        Console.WriteLine($"{Name} attacks with {AttackPower} power.");
+        return AttackPower;
+    }
+}
+3/Potion Class
+using System;
+
+public class Potion
+{
+    public string Name { get; set; }
+    public int HealingPower { get; set; }
+    public int Quantity { get; set; }
+
+    public Potion(string name, int healingPower, int quantity)
+    {
+        Name = name;
+        HealingPower = healingPower;
+        Quantity = quantity;
+    }
+
+    public void ApplyToPlayer(Player player)
+    {
+        if (Quantity > 0)
+        {
+            player.Heal(HealingPower);
+            Quantity--;
+            Console.WriteLine($"{Name} used. Remaining quantity: {Quantity}");
+        }
+        else
+        {
+            Console.WriteLine($"{Name} is out of stock.");
+        }
+    }
+}
+4/quest 
+using System;
+
+public class Quest
+{
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int Reward { get; set; }
+    public bool IsCompleted { get; private set; }
+
+    public Quest(string name, string description, int reward)
+    {
+        Name = name;
+        Description = description;
+        Reward = reward;
+        IsCompleted = false;
+    }
+
+    public void StartQuest()
+    {
+        Console.WriteLine($"Quest Started: {Name}");
+        Console.WriteLine($"Description: {Description}");
+    }
+
+    public void CompleteQuest()
+    {
+        if (!IsCompleted)
+        {
+            IsCompleted = true;
+            Console.WriteLine($"Quest Completed: {Name}. You have earned {Reward} gold!");
+        }
+        else
+        {
+            Console.WriteLine($"Quest {Name} is already completed.");
+        }
+    }
+
+    public void ClaimReward()
+    {
+        if (IsCompleted)
+        {
+            Console.WriteLine($"Reward Claimed: {Reward} gold.");
+        }
+        else
+        {
+            Console.WriteLine($"Quest {Name} is not completed yet.");
+        }
+    }
+}
+5/ inventory
+using System;
+using System.Collections.Generic;
+
+public class Inventory
+{
+    public int Capacity { get; private set; }
+    private List<string> Items { get; set; }
+
+    public Inventory(int capacity)
+    {
+        Capacity = capacity;
+        Items = new List<string>();
+    }
+
+    public void AddItem(string item)
+    {
+        if (Items.Count < Capacity)
+        {
+            Items.Add(item);
+            Console.WriteLine($"{item} added to inventory.");
+        }
+        else
+        {
+            Console.WriteLine("Inventory is full.");
+        }
+    }
+
+    public void RemoveItem(string item)
+    {
+        if (Items.Contains(item))
+        {
+            Items.Remove(item);
+            Console.WriteLine($"{item} removed from inventory.");
+        }
+        else
+        {
+            Console.WriteLine($"{item} not found in inventory.");
+        }
+    }
+
+    public void ShowItems()
+    {
+        Console.WriteLine("Inventory Items:");
+        foreach (string item in Items)
+        {
+            Console.WriteLine($"- {item}");
+        }
+    }
+}
+6/spell
+using System;
+
+public class Spell
+{
+    public string Name { get; set; }
+    public int Damage { get; set; }
+    public int ManaCost { get; set; }
+    public string Description { get; set; }
+
+    public Spell(string name, int damage, int manaCost, string description)
+    {
+        Name = name;
+        Damage = damage;
+        ManaCost = manaCost;
+        Description = description;
+    }
+
+    public void Cast()
+    {
+        Console.WriteLine($"Casting {Name}: {Description}");
+        Console.WriteLine($"Damage: {Damage}");
+    }
+
+    public void DisplaySpellDetails()
+    {
+        Console.WriteLine($"Spell Name: {Name}");
+        Console.WriteLine($"Damage: {Damage}");
+        Console.WriteLine($"Mana Cost: {ManaCost}");
+        Console.WriteLine($"Description: {Description}");
+    }
+}
+enrum
+1/weekday enmuration
+using System;
+
+public enum Weekday
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Example usage
+        Weekday today = Weekday.Friday;
+        Console.WriteLine($"Today is {today}");
+    }
+}
+
+2/ enemy state enumeration
+using System;
+
+public enum EnemyState
+{
+    Idle,
+    Patrol,
+    Attack
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Example usage
+        EnemyState currentState = EnemyState.Patrol;
+        Console.WriteLine($"The enemy is currently {currentState}");
+    }
+}
+3/ flight status enumeration
+using System;
+
+public enum FlightStatus
+{
+    Ascending,
+    Descending,
+    Stationary
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Example usage
+        FlightStatus flightStatus = FlightStatus.Ascending;
+        Console.WriteLine($"The flight status is {flightStatus}");
+    }
+}
+4/ title rank enumeration
+using System;
+
+public enum TitleRank
+{
+    Beginner,
+    Intermediate,
+    Advanced
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Example usage
+        TitleRank rank = TitleRank.Intermediate;
+        Console.WriteLine($"The title rank is {rank}");
+    }
+}
+
+5/ player movement enumeration
+using System;
+
+public enum PlayerMovement
+{
+    Idle,
+    Walk,
+    Run
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Example usage
+        PlayerMovement movement = PlayerMovement.Run;
+        Console.WriteLine($"The player is currently {movement}");
+    }
+}
+
+6/ accessing enum data 
+using System;
+
+public enum DayOfWeek
+{
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        // Display all days of the week
+        foreach (DayOfWeek day in Enum.GetValues(typeof(DayOfWeek)))
+        {
+            Console.WriteLine(day);
+        }
+    }
+}
+
