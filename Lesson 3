@@ -1,0 +1,136 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: Sum of two numbers
+        int num1 = 10, num2 = 5;
+        int sum = num1 + num2;
+        Console.WriteLine("Sum: " + sum);
+
+        // Part 2: Difference between two numbers
+        int difference = num1 - num2;
+        Console.WriteLine("Difference: " + difference);
+
+        // Part 3: Product of two numbers
+        int product = num1 * num2;
+        Console.WriteLine("Product: " + product);
+
+        // Part 4: Division of two numbers
+        double division = (double)num1 / num2;
+        Console.WriteLine("Division: " + division);
+
+        // Part 5: Remainder of two numbers
+        int remainder = num1 % num2;
+        Console.WriteLine("Remainder: " + remainder);
+
+        // Part 6: Square of a number
+        int num = 5;
+        int square = num * num;
+        Console.WriteLine("Square: " + square);
+
+        // Part 7: Average of two numbers
+        int num1_2 = 10, num2_2 = 20;
+        double average = (double)(num1_2 + num2_2) / 2;
+        Console.WriteLine("Average of two numbers: " + average);
+
+        // Part 8: Average of three numbers
+        int num1_3 = 10, num2_3 = 20, num3_3 = 30;
+        double averageThree = (double)(num1_3 + num2_3 + num3_3) / 3;
+        Console.WriteLine("Average of three numbers: " + averageThree);
+
+        // Part 9: Celsius to Fahrenheit
+        double celsius = 20;
+        double fahrenheit = (celsius * 9 / 5) + 32;
+        Console.WriteLine("Fahrenheit: " + fahrenheit);
+
+        // Part 10: Area of a rectangle
+        double length = 10, width = 5;
+        double area = length * width;
+        Console.WriteLine("Area of rectangle: " + area);
+
+        // Part 11: Volume of a sphere
+        double radius = 5;
+        double volume = (4 / 3.0) * Math.PI * Math.Pow(radius, 3);
+        Console.WriteLine("Volume of sphere: " + volume);
+
+        // Part 12: Factorial of a number
+        int factorialNum = 5;
+        int factorial = 1;
+        for (int i = 1; i <= factorialNum; i++)
+        {
+            factorial *= i;
+        }
+        Console.WriteLine("Factorial: " + factorial);
+
+        // Part 13: Compound interest
+        double principal = 1000, rate = 0.05;
+        int time = 5;
+        double amount = principal * Math.Pow((1 + rate), time);
+        Console.WriteLine("Compound Interest: " + (amount - principal));
+
+        // Part 14: Solve quadratic equation
+        double a = 1, b = 5, c = 6;
+        double discriminant = Math.Pow(b, 2) - 4 * a * c;
+        if (discriminant >= 0)
+        {
+            double root1 = (-b + Math.Sqrt(discriminant)) / (2 * a);
+            double root2 = (-b - Math.Sqrt(discriminant)) / (2 * a);
+            Console.WriteLine("Roots: " + root1 + " and " + root2);
+        }
+        else
+        {
+            Console.WriteLine("No real roots");
+        }
+
+        // Part 15: nth Fibonacci number using recursion
+        int n = 8;
+        Console.WriteLine("Fibonacci number: " + Fibonacci(n));
+
+        // Part 16: nth term of the arithmetic sequence
+        int firstTerm = 3, commonDifference = 2, termNumber = 5;
+        int nthTerm = firstTerm + (termNumber - 1) * commonDifference;
+        Console.WriteLine("Nth term: " + nthTerm);
+
+        // Part 17: Check if a number is greater than another number
+        int num1_check = 10, num2_check = 5;
+        bool isGreater = num1_check > num2_check;
+        Console.WriteLine("Is num1 greater than num2? " + isGreater);
+
+        // Part 18: Check if a number is less than or equal to 100
+        Console.Write("Enter a number: ");
+        int userNumber = int.Parse(Console.ReadLine());
+        bool isLessThanOrEqual = userNumber <= 100;
+        Console.WriteLine("Is the number less than or equal to 100? " + isLessThanOrEqual);
+
+        // Part 19: Check if a number is even AND greater than 10
+        Console.Write("Enter a number: ");
+        int number = int.Parse(Console.ReadLine());
+        bool isEvenAndGreater = (number % 2 == 0) && (number > 10);
+        Console.WriteLine("Is the number even and greater than 10? " + isEvenAndGreater);
+
+        // Part 20: Check if a number is divisible by 3 OR 5
+        Console.Write("Enter a number: ");
+        int numToCheck = int.Parse(Console.ReadLine());
+        bool isDivisible = (numToCheck % 3 == 0) || (numToCheck % 5 == 0);
+        Console.WriteLine("Is the number divisible by 3 or 5? " + isDivisible);
+
+        // Part 21: Increment a variable by 5
+        Console.Write("Enter a number: ");
+        int incrementNumber = int.Parse(Console.ReadLine());
+        incrementNumber += 5;
+        Console.WriteLine("After incrementing by 5: " + incrementNumber);
+
+        // Part 22: Remainder when dividing by 7
+        int numberToUpdate = 27;
+        numberToUpdate %= 7;
+        Console.WriteLine("Remainder when dividing by 7: " + numberToUpdate);
+    }
+
+    static int Fibonacci(int n)
+    {
+        if (n <= 1) return n;
+        return Fibonacci(n - 1) + Fibonacci(n - 2);
+    }
+}
