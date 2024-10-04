@@ -1,0 +1,474 @@
+lesson6 ADvanced
+quiz 1 2 3 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 1: Declare an integer variable named "num" and print its value
+        int num = 10;
+        Console.WriteLine($"The value of num is: {num}");
+
+        // Part 2: Concatenate two strings and print the result
+        string firstName = "John";
+        string lastName = "Doe";
+        string fullName = firstName + " " + lastName;
+        Console.WriteLine($"The full name is: {fullName}");
+
+        // Part 3: Get the user's age as input and print it
+        Console.Write("Enter your age: ");
+        string ageInput = Console.ReadLine();
+        Console.WriteLine($"Your age is: {ageInput}");
+
+        // Part 4: Calculate the sum of two integers and print the result
+        int a = 5;
+        int b = 7;
+        int sum = a + b;
+        Console.WriteLine($"The sum of {a} and {b} is: {sum}");
+
+        // Part 5: Convert the temperature from Celsius to Fahrenheit
+        double celsius = 25;
+        double fahrenheit = (celsius * 9 / 5) + 32;
+        Console.WriteLine($"The Fahrenheit equivalent is: {fahrenheit}");
+
+        // Part 6: Declare an integer variable for player health and print it
+        int playerHealth = 100;
+        Console.WriteLine($"Player's health: {playerHealth}");
+
+        // Part 7: Get the player's name and concatenate it with the game's title
+        Console.Write("Enter your name: ");
+        string playerName = Console.ReadLine();
+        string gameTitle = "Welcome to the game, ";
+        string welcomeMessage = gameTitle + playerName + "!";
+        Console.WriteLine(welcomeMessage);
+
+        // Part 8: Calculate the area of a rectangular movement space in the game
+        int length = 10;
+        int width = 5;
+        int area = length * width;
+        Console.WriteLine($"The area of the rectangular movement space is: {area}");
+
+        // Part 9: Extract the numeric part of the player's level from a string and print it
+        string playerLevelString = "Level 10";
+        // Extract numeric part from the string
+        int playerLevel = int.Parse(playerLevelString.Replace("Level ", ""));
+        Console.WriteLine($"Player's Level as an integer: {playerLevel}");
+
+        // Part 10: Calculate the total score from points
+        int pointsForKillingEnemy = 100;
+        int pointsForCollectingBonus = 50;
+        int totalScore = pointsForKillingEnemy + pointsForCollectingBonus;
+        Console.WriteLine($"The total score is: {totalScore}");
+    }
+}
+
+11/Objective: Convert a given string to uppercase, lowercase, and title case.
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 11: Convert string to Upper Case, Lower Case, and Title Case
+        Console.Write("Enter the string: ");
+        string inputString = Console.ReadLine();
+
+        // Convert to Upper Case
+        string upperCaseString = inputString.ToUpper();
+        Console.WriteLine($"The string in upper case: {upperCaseString}");
+
+        // Convert to Lower Case
+        string lowerCaseString = inputString.ToLower();
+        Console.WriteLine($"The string in lower case: {lowerCaseString}");
+
+        // Convert to Title Case
+        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+        string titleCaseString = textInfo.ToTitleCase(inputString.ToLower());
+        Console.WriteLine($"The string in title case: {titleCaseString}");
+    }
+}
+
+12/Objective: Calculate compound interest.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 12: Calculate Compound Interest
+        Console.Write("Enter the principal amount: ");
+        double principalAmount = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the interest rate: ");
+        double interestRate = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter the time period (in years): ");
+        int timePeriod = Convert.ToInt32(Console.ReadLine());
+
+        // Compound Interest Calculation
+        double compoundInterest = principalAmount * (Math.Pow((1 + interestRate / 100), timePeriod)) - principalAmount;
+        Console.WriteLine($"The compound interest is: {compoundInterest:F2}");
+    }
+}
+
+13/Objective: Swap two numbers.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 13: Swap Two Numbers
+        Console.Write("Enter the first number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        // Swapping using a temporary variable
+        int temp = num1;
+        num1 = num2;
+        num2 = temp;
+
+        Console.WriteLine("After swapping:");
+        Console.WriteLine($"First number: {num1}");
+        Console.WriteLine($"Second number: {num2}");
+    }
+}
+
+14/Objective: Find the largest of three numbers.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 14: Find the Largest of Three Numbers
+        Console.Write("Enter the first number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the third number: ");
+        int num3 = Convert.ToInt32(Console.ReadLine());
+
+        // Find the largest number
+        int maxNumber = Math.Max(num1, Math.Max(num2, num3));
+
+        Console.WriteLine($"The 3 numbers are: {num1} {num2} {num3}");
+        Console.WriteLine($"The greatest number is: {maxNumber}");
+    }
+}
+
+15/Objective: Determine the greatest common divisor (GCD) of two numbers using the Euclidean algorithm.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Part 15: Find the Greatest Common Divisor (GCD)
+        Console.Write("Enter the first number: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        // Compute GCD using the Euclidean algorithm
+        int gcd = GCD(num1, num2);
+        Console.WriteLine($"The GCD of {num1} and {num2} is: {gcd}");
+    }
+
+    // Function to compute GCD using Euclidean algorithm
+    static int GCD(int a, int b)
+    {
+        while (b != 0)
+        {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
+advence 4 5 6 
+1/Objective: Calculate the Body Mass Index (BMI) and determine the health category.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user to enter weight and height
+        Console.Write("Enter weight (kg): ");
+        double weight = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter height (m): ");
+        double height = Convert.ToDouble(Console.ReadLine());
+
+        // Calculate BMI
+        double bmi = weight / (height * height);
+
+        // Determine health category
+        string healthCategory;
+
+        if (bmi < 18.5)
+            healthCategory = "Underweight";
+        else if (bmi >= 18.5 && bmi <= 23)
+            healthCategory = "Normal weight";
+        else if (bmi > 23 && bmi <= 27.5)
+            healthCategory = "Overweight";
+        else
+            healthCategory = "Obese";
+
+        // Display BMI and health category
+        Console.WriteLine($"Your BMI is: {bmi:F2}");
+        Console.WriteLine($"Health category: {healthCategory}");
+    }
+}
+
+2/Objective: Calculate the discount rate and the discount amount based on the amount spent.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user to enter amount spent
+        Console.Write("Enter the amount spent ($): ");
+        double amountSpent = Convert.ToDouble(Console.ReadLine());
+
+        // Determine discount rate
+        double discountRate;
+
+        if (amountSpent <= 100)
+            discountRate = 0;
+        else if (amountSpent <= 500)
+            discountRate = 5;
+        else if (amountSpent <= 1000)
+            discountRate = 10;
+        else
+            discountRate = 20;
+
+        // Calculate discount amount
+        double discountAmount = (discountRate / 100) * amountSpent;
+
+        // Display discount rate and amount
+        Console.WriteLine($"Discount rate: {discountRate}%");
+        Console.WriteLine($"Discount amount: ${discountAmount:F2}");
+    }
+}
+
+3/Objective: Display a multiplication table for a given number.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Prompt user to enter a number
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        // Display multiplication table from 1 to 12
+        for (int i = 1; i <= 12; i++)
+        {
+            Console.WriteLine($"{i} x {number} = {i * number}");
+        }
+    }
+}
+
+4/Objective: Create a menu to perform various operations and allow the user to choose actions repeatedly until they choose to exit.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        bool exit = false;
+
+        while (!exit)
+        {
+            // Display menu
+            Console.WriteLine("------------- MENU --------------");
+            Console.WriteLine("[1] Calculate Body Mass Index");
+            Console.WriteLine("[2] Calculate Discount");
+            Console.WriteLine("[3] Display Multiplication Table");
+            Console.WriteLine("[0] Exit");
+            Console.WriteLine("---------------------------------");
+            Console.Write("Choose an option: ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    CalculateBMI();
+                    break;
+                case 2:
+                    CalculateDiscount();
+                    break;
+                case 3:
+                    DisplayMultiplicationTable();
+                    break;
+                case 0:
+                    exit = true;
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please try again.");
+                    break;
+            }
+        }
+    }
+
+    static void CalculateBMI()
+    {
+        Console.Write("Enter weight (kg): ");
+        double weight = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Enter height (m): ");
+        double height = Convert.ToDouble(Console.ReadLine());
+
+        double bmi = weight / (height * height);
+
+        string healthCategory;
+
+        if (bmi < 18.5)
+            healthCategory = "Underweight";
+        else if (bmi >= 18.5 && bmi <= 23)
+            healthCategory = "Normal weight";
+        else if (bmi > 23 && bmi <= 27.5)
+            healthCategory = "Overweight";
+        else
+            healthCategory = "Obese";
+
+        Console.WriteLine($"Your BMI is: {bmi:F2}");
+        Console.WriteLine($"Health category: {healthCategory}");
+    }
+
+    static void CalculateDiscount()
+    {
+        Console.Write("Enter the amount spent ($): ");
+        double amountSpent = Convert.ToDouble(Console.ReadLine());
+
+        double discountRate;
+
+        if (amountSpent <= 100)
+            discountRate = 0;
+        else if (amountSpent <= 500)
+            discountRate = 5;
+        else if (amountSpent <= 1000)
+            discountRate = 10;
+        else
+            discountRate = 20;
+
+        double discountAmount = (discountRate / 100) * amountSpent;
+
+        Console.WriteLine($"Discount rate: {discountRate}%");
+        Console.WriteLine($"Discount amount: ${discountAmount:F2}");
+    }
+
+    static void DisplayMultiplicationTable()
+    {
+        Console.Write("Enter a number: ");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 1; i <= 12; i++)
+        {
+            Console.WriteLine($"{i} x {number} = {i * number}");
+        }
+    }
+}
+
+5/Objective: Add up to 5 unique words to a list and display them with the total number of letters.
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> words = new List<string>();
+        int totalLetters = 0;
+
+        while (words.Count < 5)
+        {
+            Console.Write("Enter a word (or 'x' to stop): ");
+            string word = Console.ReadLine();
+
+            if (word.ToLower() == "x")
+                break;
+
+            if (!words.Contains(word))
+            {
+                words.Add(word);
+                totalLetters += word.Length;
+            }
+            else
+            {
+                Console.WriteLine("Word already added. Please enter a different word.");
+            }
+        }
+
+        // Display the list of words
+        Console.WriteLine("\nList of words:");
+        foreach (string w in words)
+        {
+            Console.WriteLine($"- {w}");
+        }
+
+        // Display the total number of letters
+        Console.WriteLine($"Total number of letters: {totalLetters}");
+    }
+}
+6/Objective: Create a number guessing game where the user tries to guess a randomly generated number between 1 and 100.
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Random random = new Random();
+        int numberToGuess = random.Next(1, 101);
+        int numberOfTries = 0;
+        const int maxTries = 5;
+        bool guessedCorrectly = false;
+
+        Console.WriteLine("Guess the number (between 1 and 100, or enter -1 to quit):");
+
+        while (numberOfTries < maxTries && !guessedCorrectly)
+        {
+            Console.Write("Your guess: ");
+            int userGuess = Convert.ToInt32(Console.ReadLine());
+
+            if (userGuess == -1)
+            {
+                break;
+            }
+
+            numberOfTries++;
+
+            if (userGuess > numberToGuess)
+            {
+                Console.WriteLine("Too high!");
+            }
+            else if (userGuess < numberToGuess)
+            {
+                Console.WriteLine("Too low!");
+            }
+            else
+            {
+                guessedCorrectly = true;
+                Console.WriteLine($"Congratulations! You guessed the correct number in {numberOfTries} tries.");
+            }
+        }
+
+        if (!guessedCorrectly)
+        {
+            Console.WriteLine($"Sorry! The correct number was {numberToGuess}.");
+        }
+    }
+}
