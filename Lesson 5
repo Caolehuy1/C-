@@ -1,0 +1,1384 @@
+
+if 
+1/
+Console.WriteLine("Enter first number:");
+int num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter second number:");
+int num2 = int.Parse(Console.ReadLine());
+
+if (num1 == num2)
+{
+    Console.WriteLine("The two numbers are equal.");
+}
+ 2/
+Console.WriteLine("Enter first number:");
+int num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter second number:");
+int num2 = int.Parse(Console.ReadLine());
+
+if (num1 > num2)
+{
+    Console.WriteLine("The first number is greater than the second number.");
+}
+3/ 
+Console.WriteLine("Enter first number:");
+int num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter second number:");
+int num2 = int.Parse(Console.ReadLine());
+
+if (num1 < num2)
+{
+    Console.WriteLine("The first number is less than the second number.");
+}
+
+4/ 
+Console.WriteLine("Enter first number:");
+int num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter second number:");
+int num2 = int.Parse(Console.ReadLine());
+
+if (num1 != num2)
+{
+    Console.WriteLine("The two numbers are not equal.");
+}
+
+5/ 
+Console.WriteLine("Enter first number:");
+int num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter second number:");
+int num2 = int.Parse(Console.ReadLine());
+
+if (num1 >= num2)
+{
+    Console.WriteLine("The first number is greater than or equal to the second number.");
+}
+
+6/ 
+Console.WriteLine("Enter first number:");
+int num1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter second number:");
+int num2 = int.Parse(Console.ReadLine());
+
+if (num1 <= num2)
+{
+    Console.WriteLine("The first number is less than or equal to the second number.");
+}
+
+7/
+Console.WriteLine("What is 2 + 2?");
+int answer = int.Parse(Console.ReadLine());
+
+if (answer == 4)
+{
+    Console.WriteLine("Correct!");
+}
+else
+{
+    Console.WriteLine("Incorrect. The correct answer is 4.");
+}
+
+8/
+Console.WriteLine("Enter your age:");
+int age = int.Parse(Console.ReadLine());
+
+if (age >= 18)
+{
+    Console.WriteLine("You are old enough to vote.");
+}
+else
+{
+    Console.WriteLine("You are not old enough to vote.");
+}
+
+9/
+Console.WriteLine("Enter enemy's health points:");
+int health = int.Parse(Console.ReadLine());
+
+if (health == 100)
+{
+    Console.WriteLine("Enemy is at full health.");
+}
+else if (health == 50)
+{
+    Console.WriteLine("Enemy is at half health.");
+}
+else if (health == 25)
+{
+    Console.WriteLine("Enemy is critically injured.");
+}
+else if (health == 0)
+{
+    Console.WriteLine("Enemy is defeated.");
+}
+else
+{
+    Console.WriteLine("Enemy's health status is unknown.");
+}
+
+10/
+Console.WriteLine("Enter your age:");
+int age = int.Parse(Console.ReadLine());
+
+if (age >= 18)
+{
+    Console.WriteLine("You are eligible for a discount.");
+}
+else
+{
+    Console.WriteLine("You are not eligible for a discount.");
+}
+
+break
+1/
+for (int i = 1; i <= 20; i++)
+{
+    if (i == 5)
+    {
+        continue; // Skip number 5
+    }
+    Console.WriteLine(i);
+}
+
+2/
+for (int i = 1; i <= 10; i++)
+{
+    if (i == 7)
+    {
+        break; // Exit the loop if number 7 is encountered
+    }
+    Console.WriteLine(i);
+}
+
+3/
+for (int i = 1; i <= 20; i++)
+{
+    if (i == 10)
+    {
+        continue; // Skip number 10
+    }
+    if (i % 2 == 0)
+    {
+        Console.WriteLine(i);
+    }
+}
+
+4/
+string[] fruits = { "banana", "apple", "orange", "grape", "apple", "kiwi" };
+
+foreach (string fruit in fruits)
+{
+    if (fruit.ToLower() == "apple")
+    {
+        Console.WriteLine("Apple found!");
+        break; // Stop searching once "apple" is found
+    }
+}
+
+5/
+for (int i = 1; i <= 100; i++)
+{
+    if (i % 10 == 0)
+    {
+        continue; // Skip counting by 10s
+    }
+    Console.WriteLine(i);
+}
+
+6/
+for (char letter = 'A'; letter <= 'G'; letter++)
+{
+    if (letter == 'E')
+    {
+        continue; // Skip printing letter 'E'
+    }
+    Console.WriteLine(letter);
+}
+
+7/
+for (int number = 2; number <= 50; number++)
+{
+    bool isPrime = true;
+    for (int divisor = 2; divisor < number; divisor++)
+    {
+        if (number % divisor == 0)
+        {
+            isPrime = false;
+            break; // Not a prime number, exit inner loop
+        }
+    }
+    if (!isPrime)
+    {
+        continue; // Skip non-prime numbers
+    }
+    Console.WriteLine(number);
+}
+
+8/
+for (int i = 1; i <= 10; i++)
+{
+    if (i == 3)
+    {
+        continue; // Skip number 3
+    }
+    Console.WriteLine(i);
+}
+
+9/
+int[] numbers = { 10, 15, 20, 25, 30 };
+
+for (int i = 0; i < numbers.Length; i++)
+{
+    if (numbers[i] == 20)
+    {
+        Console.WriteLine($"Number 20 found at index {i}");
+        break; // Stop searching once 20 is found
+    }
+}
+
+10/
+string[] fruits = { "apple", "banana", "orange", "grape", "kiwi" };
+
+foreach (string fruit in fruits)
+{
+    if (fruit.ToLower() == "banana")
+    {
+        continue; // Skip printing "banana"
+    }
+    Console.WriteLine(fruit);
+}
+
+bo sung 
+1/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Prompt user to enter monthly sales
+        Console.WriteLine("Enter the monthly sales:");
+        decimal monthlySales = decimal.Parse(Console.ReadLine());
+
+        // Calculate commission based on sales amount
+        decimal commissionRate = 0.0m;
+        if (monthlySales >= 10000)
+        {
+            commissionRate = 0.10m; // 10% commission for sales >= $10,000
+        }
+        else
+        {
+            commissionRate = 0.05m; // 5% commission for sales < $10,000
+        }
+
+        decimal commissionEarned = monthlySales * commissionRate;
+
+        // Display the commission earned
+        Console.WriteLine($"Commission earned: ${commissionEarned:F2}");
+    }
+}
+2/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Initialize Random object to generate random numbers
+        Random random = new Random();
+
+        // Generate two random integers between 0 and 100 inclusive
+        int num1 = random.Next(0, 101); // Generates a random number between 0 and 100
+        int num2 = random.Next(0, 101); // Generates a random number between 0 and 100
+
+        // Calculate the correct sum
+        int correctSum = num1 + num2;
+
+        // Prompt the user to enter the sum of the two numbers
+        Console.Write($"Enter the sum of {num1} and {num2}: ");
+        int userAnswer = int.Parse(Console.ReadLine());
+
+        // Check if the user's answer is correct and provide appropriate feedback
+        if (userAnswer == correctSum)
+        {
+            Console.WriteLine("Correct!");
+        }
+        else
+        {
+            Console.WriteLine($"Wrong! The correct answer is {correctSum}.");
+        }
+    }
+}
+
+3/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Prompt user to enter student's marks
+        Console.Write("Enter student's marks: ");
+        int marks = int.Parse(Console.ReadLine());
+
+        // Initialize variables for grade and comment
+        string grade = "";
+        string comment = "";
+
+        // Determine grade based on marks
+        if (marks >= 85)
+        {
+            grade = "A+";
+            comment = "Excellent!";
+        }
+        else if (marks >= 80)
+        {
+            grade = "A";
+            comment = "Well done.";
+        }
+        else if (marks >= 75)
+        {
+            grade = "B+";
+        }
+        else if (marks >= 70)
+        {
+            grade = "B";
+        }
+        else if (marks >= 65)
+        {
+            grade = "C+";
+        }
+        else if (marks >= 60)
+        {
+            grade = "C";
+        }
+        else if (marks >= 55)
+        {
+            grade = "D+";
+        }
+        else if (marks >= 50)
+        {
+            grade = "D";
+        }
+        else
+        {
+            grade = "F";
+            comment = "See me.";
+        }
+
+        // Display the grade and comment
+        Console.WriteLine($"Grade: {grade}");
+        if (!string.IsNullOrEmpty(comment))
+        {
+            Console.WriteLine($"Comment: {comment}");
+        }
+    }
+}
+
+4/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Example variables (you can change these to test different scenarios)
+        bool sees_player = true;
+        int dist_from_player = 3;
+
+        // Determine the action of the guard based on the conditions
+        if (!sees_player)
+        {
+            Console.WriteLine("The guard will wait.");
+        }
+        else
+        {
+            if (dist_from_player <= 1)
+            {
+                Console.WriteLine("The guard will attack.");
+            }
+            else if (dist_from_player >= 2 && dist_from_player <= 4)
+            {
+                Console.WriteLine("The guard will advance.");
+            }
+            else if (dist_from_player >= 5)
+            {
+                Console.WriteLine("The guard will wait.");
+            }
+        }
+    }
+}
+
+swich-case
+1/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number between 1 and 3:");
+        int number = Convert.ToInt32(Console.ReadLine());
+
+        switch (number)
+        {
+            case 1:
+                Console.WriteLine("One");
+                break;
+            case 2:
+                Console.WriteLine("Two");
+                break;
+            case 3:
+                Console.WriteLine("Three");
+                break;
+            default:
+                Console.WriteLine("Invalid number entered.");
+                break;
+        }
+    }
+}
+
+2/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a character class:");
+        Console.WriteLine("1. Warrior");
+        Console.WriteLine("2. Mage");
+        Console.WriteLine("3. Archer");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You have chosen Warrior.");
+                break;
+            case 2:
+                Console.WriteLine("You have chosen Mage.");
+                break;
+            case 3:
+                Console.WriteLine("You have chosen Archer.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+3/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a movement direction:");
+        Console.WriteLine("1. North");
+        Console.WriteLine("2. South");
+        Console.WriteLine("3. East");
+        Console.WriteLine("4. West");
+
+        int direction = Convert.ToInt32(Console.ReadLine());
+
+        switch (direction)
+        {
+            case 1:
+                Console.WriteLine("Moving North.");
+                break;
+            case 2:
+                Console.WriteLine("Moving South.");
+                break;
+            case 3:
+                Console.WriteLine("Moving East.");
+                break;
+            case 4:
+                Console.WriteLine("Moving West.");
+                break;
+            default:
+                Console.WriteLine("Invalid direction.");
+                break;
+        }
+    }
+}
+
+4/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number between 1 and 7:");
+        int dayNumber = Convert.ToInt32(Console.ReadLine());
+
+        switch (dayNumber)
+        {
+            case 1:
+                Console.WriteLine("Monday");
+                break;
+            case 2:
+                Console.WriteLine("Tuesday");
+                break;
+            case 3:
+                Console.WriteLine("Wednesday");
+                break;
+            case 4:
+                Console.WriteLine("Thursday");
+                break;
+            case 5:
+                Console.WriteLine("Friday");
+                break;
+            case 6:
+                Console.WriteLine("Saturday");
+                break;
+            case 7:
+                Console.WriteLine("Sunday");
+                break;
+            default:
+                Console.WriteLine("Invalid day number.");
+                break;
+        }
+    }
+}
+
+5/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a weapon:");
+        Console.WriteLine("1. Sword");
+        Console.WriteLine("2. Bow");
+        Console.WriteLine("3. Staff");
+        Console.WriteLine("4. Axe");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You have chosen Sword.");
+                break;
+            case 2:
+                Console.WriteLine("You have chosen Bow.");
+                break;
+            case 3:
+                Console.WriteLine("You have chosen Staff.");
+                break;
+            case 4:
+                Console.WriteLine("You have chosen Axe.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+6/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Select a magic spell:");
+        Console.WriteLine("1. Fire");
+        Console.WriteLine("2. Water");
+        Console.WriteLine("3. Earth");
+        Console.WriteLine("4. Air");
+        Console.WriteLine("5. Lightning");
+
+        int spellNumber = Convert.ToInt32(Console.ReadLine());
+
+        switch (spellNumber)
+        {
+            case 1:
+                Console.WriteLine("You have selected Fire.");
+                break;
+            case 2:
+                Console.WriteLine("You have selected Water.");
+                break;
+            case 3:
+                Console.WriteLine("You have selected Earth.");
+                break;
+            case 4:
+                Console.WriteLine("You have selected Air.");
+                break;
+            case 5:
+                Console.WriteLine("You have selected Lightning.");
+                break;
+            default:
+                Console.WriteLine("Invalid spell selection.");
+                break;
+        }
+    }
+}
+
+7/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Menu:");
+        Console.WriteLine("1. Start Game");
+        Console.WriteLine("2. Options");
+        Console.WriteLine("3. Load Game");
+        Console.WriteLine("4. Exit");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("Starting the game...");
+                break;
+            case 2:
+                Console.WriteLine("Opening options menu...");
+                break;
+            case 3:
+                Console.WriteLine("Loading game...");
+                break;
+            case 4:
+                Console.WriteLine("Exiting the game...");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+8/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose an interaction with the NPC:");
+        Console.WriteLine("1. Talk");
+        Console.WriteLine("2. Trade");
+        Console.WriteLine("3. Quest");
+
+        int interaction = Convert.ToInt32(Console.ReadLine());
+
+        switch (interaction)
+        {
+            case 1:
+                Console.WriteLine("You chose to talk to the NPC.");
+                break;
+            case 2:
+                Console.WriteLine("You chose to trade with the NPC.");
+                break;
+            case 3:
+                Console.WriteLine("You chose to start a quest with the NPC.");
+                break;
+            default:
+                Console.WriteLine("Invalid interaction choice.");
+                break;
+        }
+    }
+}
+
+9/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a solution for the puzzle:");
+        Console.WriteLine("1. Solution 1");
+        Console.WriteLine("2. Solution 2");
+        Console.WriteLine("3. Solution 3");
+        Console.WriteLine("4. Solution 4");
+        Console.WriteLine("5. Solution 5");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You chose Solution 1.");
+                break;
+            case 2:
+                Console.WriteLine("You chose Solution 2.");
+                break;
+            case 3:
+                Console.WriteLine("You chose Solution 3.");
+                break;
+            case 4:
+                Console.WriteLine("You chose Solution 4.");
+                break;
+            case 5:
+                Console.WriteLine("Yo
+
+10/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a dialogue option:");
+        Console.WriteLine("1. Option 1");
+        Console.WriteLine("2. Option 2");
+        Console.WriteLine("3. Option 3");
+        Console.WriteLine("4. Option 4");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You chose Dialogue Option 1.");
+                break;
+            case 2:
+                Console.WriteLine("You chose Dialogue Option 2.");
+                break;
+            case 3:
+                Console.WriteLine("You chose Dialogue Option 3.");
+                break;
+            case 4:
+                Console.WriteLine("You chose Dialogue Option 4.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+11/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a crafting recipe:");
+        Console.WriteLine("1. Potion");
+        Console.WriteLine("2. Weapon");
+        Console.WriteLine("3. Armor");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You chose to craft a Potion.");
+                break;
+            case 2:
+                Console.WriteLine("You chose to craft a Weapon.");
+                break;
+            case 3:
+                Console.WriteLine("You chose to craft Armor.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+12/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a scene:");
+        Console.WriteLine("1. Scene 1");
+        Console.WriteLine("2. Scene 2");
+        Console.WriteLine("3. Scene 3");
+        Console.WriteLine("4. Scene 4");
+        Console.WriteLine("5. Scene 5");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You chose Scene 1.");
+                break;
+            case 2:
+                Console.WriteLine("You chose Scene 2.");
+                break;
+            case 3:
+                Console.WriteLine("You chose Scene 3.");
+                break;
+            case 4:
+                Console.WriteLine("You chose Scene 4.");
+                break;
+            case 5:
+                Console.WriteLine("You chose Scene 5.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+13/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Select a quest:");
+        Console.WriteLine("1. Quest 1");
+        Console.WriteLine("2. Quest 2");
+        Console.WriteLine("3. Quest 3");
+        Console.WriteLine("4. Quest 4");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You chose Quest 1.");
+                break;
+            case 2:
+                Console.WriteLine("You chose Quest 2.");
+                break;
+            case 3:
+                Console.WriteLine("You chose Quest 3.");
+                break;
+            case 4:
+                Console.WriteLine("You chose Quest 4.");
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+}
+
+14/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a potion to brew:");
+        Console.WriteLine("1. Health Potion");
+        Console.WriteLine("2. Mana Potion");
+        Console.WriteLine("3. Stamina Potion");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You are brewing a Health Potion.");
+                break;
+            case 2:
+                Console.WriteLine("You are brewing a Mana Potion.");
+                break;
+            case 3:
+                Console.WriteLine("You are brewing a Stamina Potion.");
+                break;
+            default:
+                Console.WriteLine("Invalid potion choice.");
+                break;
+        }
+    }
+}
+15/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a movement direction:");
+        Console.WriteLine("1. Left");
+        Console.WriteLine("2. Right");
+        Console.WriteLine("3. Jump");
+        Console.WriteLine("4. Crouch");
+
+        int direction = Convert.ToInt32(Console.ReadLine());
+
+        switch (direction)
+        {
+            case 1:
+                Console.WriteLine("Moving Left.");
+                break;
+            case 2:
+                Console.WriteLine("Moving Right.");
+                break;
+            case 3:
+                Console.WriteLine("Jumping.");
+                break;
+            case 4:
+                Console.WriteLine("Crouching.");
+                break;
+            default:
+                Console.WriteLine("Invalid direction.");
+                break;
+        }
+    }
+}
+
+16/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a material for weapon upgrade:");
+        Console.WriteLine("1. Iron");
+        Console.WriteLine("2. Steel");
+        Console.WriteLine("3. Gold");
+        Console.WriteLine("4. Diamond");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You selected Iron for the weapon upgrade.");
+                break;
+            case 2:
+                Console.WriteLine("You selected Steel for the weapon upgrade.");
+                break;
+            case 3:
+                Console.WriteLine("You selected Gold for the weapon upgrade.");
+                break;
+            case 4:
+                Console.WriteLine("You selected Diamond for the weapon upgrade.");
+                break;
+            default:
+                Console.WriteLine("Invalid material choice.");
+                break;
+        }
+    }
+}
+
+17/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Select a spell element:");
+        Console.WriteLine("1. Fire");
+        Console.WriteLine("2. Water");
+        Console.WriteLine("3. Earth");
+        Console.WriteLine("4. Air");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You selected Fire for spell casting.");
+                break;
+            case 2:
+                Console.WriteLine("You selected Water for spell casting.");
+                break;
+            case 3:
+                Console.WriteLine("You selected Earth for spell casting.");
+                break;
+            case 4:
+                Console.WriteLine("You selected Air for spell casting.");
+                break;
+            default:
+                Console.WriteLine("Invalid spell element choice.");
+                break;
+        }
+    }
+}
+
+18/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a skill to enhance:");
+        Console.WriteLine("1. Strength");
+        Console.WriteLine("2. Agility");
+        Console.WriteLine("3. Intelligence");
+        Console.WriteLine("4. Vitality");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You selected Strength to enhance.");
+                break;
+            case 2:
+                Console.WriteLine("You selected Agility to enhance.");
+                break;
+            case 3:
+                Console.WriteLine("You selected Intelligence to enhance.");
+                break;
+            case 4:
+                Console.WriteLine("You selected Vitality to enhance.");
+                break;
+            default:
+                Console.WriteLine("Invalid skill choice.");
+                break;
+        }
+    }
+}
+
+19/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Select a solution for the puzzle:");
+        Console.WriteLine("1. Solution A");
+        Console.WriteLine("2. Solution B");
+        Console.WriteLine("3. Solution C");
+        Console.WriteLine("4. Solution D");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You selected Solution A for the puzzle.");
+                break;
+            case 2:
+                Console.WriteLine("You selected Solution B for the puzzle.");
+                break;
+            case 3:
+                Console.WriteLine("You selected Solution C for the puzzle.");
+                break;
+            case 4:
+                Console.WriteLine("You selected Solution D for the puzzle.");
+                break;
+            default:
+                Console.WriteLine("Invalid solution choice.");
+                break;
+        }
+    }
+}
+
+20/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose an ingredient for potion brewing:");
+        Console.WriteLine("1. Herb");
+        Console.WriteLine("2. Mushroom");
+        Console.WriteLine("3. Flower");
+        Console.WriteLine("4. Crystal");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You selected Herb for potion brewing.");
+                break;
+            case 2:
+                Console.WriteLine("You selected Mushroom for potion brewing.");
+                break;
+            case 3:
+                Console.WriteLine("You selected Flower for potion brewing.");
+                break;
+            case 4:
+                Console.WriteLine("You selected Crystal for potion brewing.");
+                break;
+            default:
+                Console.WriteLine("Invalid ingredient choice.");
+                break;
+        }
+    }
+}
+
+21/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose an interaction option with the NPC:");
+        Console.WriteLine("1. Talk");
+        Console.WriteLine("2. Trade");
+        Console.WriteLine("3. Quest");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You selected to Talk with the NPC.");
+                break;
+            case 2:
+                Console.WriteLine("You selected to Trade with the NPC.");
+                break;
+            case 3:
+                Console.WriteLine("You selected to Start a Quest with the NPC.");
+                break;
+            default:
+                Console.WriteLine("Invalid interaction choice.");
+                break;
+        }
+    }
+}
+22/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a scene to navigate:");
+        Console.WriteLine("1. Forest");
+        Console.WriteLine("2. Dungeon");
+        Console.WriteLine("3. Castle");
+        Console.WriteLine("4. Desert");
+        Console.WriteLine("5. Ocean");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("Navigating to the Forest scene.");
+                break;
+            case 2:
+                Console.WriteLine("Navigating to the Dungeon scene.");
+                break;
+            case 3:
+                Console.WriteLine("Navigating to the Castle scene.");
+                break;
+            case 4:
+                Console.WriteLine("Navigating to the Desert scene.");
+                break;
+            case 5:
+                Console.WriteLine("Navigating to the Ocean scene.");
+                break;
+            default:
+                Console.WriteLine("Invalid scene choice.");
+                break;
+        }
+    }
+}
+
+23/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Select a quest option:");
+        Console.WriteLine("1. Investigate the haunted mansion.");
+        Console.WriteLine("2. Retrieve the ancient artifact.");
+        Console.WriteLine("3. Defend the village from bandits.");
+        Console.WriteLine("4. Rescue the captured princess.");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("You chose to investigate the haunted mansion.");
+                break;
+            case 2:
+                Console.WriteLine("You chose to retrieve the ancient artifact.");
+                break;
+            case 3:
+                Console.WriteLine("You chose to defend the village from bandits.");
+                break;
+            case 4:
+                Console.WriteLine("You chose to rescue the captured princess.");
+                break;
+            default:
+                Console.WriteLine("Invalid quest option.");
+                break;
+        }
+    }
+}
+
+24/
+using System;
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Choose a menu option:");
+        Console.WriteLine("1. Start Game");
+        Console.WriteLine("2. Options");
+        Console.WriteLine("3. Load Game");
+        Console.WriteLine("4. Exit");
+
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("Starting the game.");
+                break;
+            case 2:
+                Console.WriteLine("Opening options menu.");
+                break;
+            case 3:
+                Console.WriteLine("Loading game from save.");
+                break;
+            case 4:
+                Console.WriteLine("Exiting the game.");
+                break;
+            default:
+                Console.WriteLine("Invalid menu option.");
+                break;
+        }
+    }
+}
+
+scope
+1/
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("You're on a quest to find a hidden treasure deep in the forest.");
+        Console.WriteLine("You stumble upon an ancient cave with mysterious inscriptions.");
+
+        // Enter the cave to explore
+        Console.WriteLine("\nYou enter the dark cave, your heart pounding with excitement.");
+
+        // Start a new block for inside the cave
+        {
+            // Declare your character's health and energy levels
+            int health = 100;
+            int energy = 50;
+            // Declare a variable for finding a treasure chest
+            int treasureChestGold = 1000;
+            // Explore the cave and find the treasure chest
+            Console.WriteLine("\nYou stumble upon an old treasure chest, hidden beneath rubble!");
+            Console.WriteLine("Your eyes widen as you uncover the gleaming gold coins inside.");
+            Console.WriteLine("You found " + treasureChestGold + " gold coins!");
+
+            // Variable treasureChestGold is in scope within this block
+            Console.WriteLine("Your health: " + health);
+            Console.WriteLine("Your energy: " + energy);
+            Console.WriteLine("Treasure chest gold: " + treasureChestGold);
+        }
+
+        // Attempting to access treasureChestGold outside its scope will result in an error
+        // Console.WriteLine("You count your gold coins outside the cave: " + treasureChestGold);
+
+        // Continue your adventure
+        Console.WriteLine("\nWith your newfound wealth, you continue your journey deeper into the forest.");
+    }
+}
+2/
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("You arrive at the crime scene, a dimly lit alleyway shrouded in mystery.");
+        Console.WriteLine("Your keen eyes scan the surroundings for any clues.");
+
+        // Declare variables for evidence found at the crime scene
+        string evidence1;
+        string evidence2;
+
+        // Begin your investigation
+        Console.WriteLine("\nYou start gathering evidence, carefully collecting any clues left behind.");
+
+        // Start a new block for searching the crime scene
+        {
+            // Declare a variable for a key piece of evidence
+            string fingerprint = "Unknown";
+            // Investigate further and find a torn piece of cloth
+            Console.WriteLine("\nYou discover a torn piece of cloth with a mysterious symbol.");
+            Console.WriteLine("Your heart races as you realize its significance: " + fingerprint);
+            // Store the discovered evidence
+            evidence1 = "Torn cloth with mysterious symbol";
+            evidence2 = "Unknown";
+        }
+
+        // Attempting to access fingerprint outside its scope will result in an error
+        // Console.WriteLine("You carefully analyze the fingerprint: " + fingerprint);
+
+        // Continue your investigation
+        Console.WriteLine("\nWith the evidence collected, you piece together the puzzle of the crime.");
+        Console.WriteLine("Evidence 1: " + evidence1);
+        Console.WriteLine("Evidence 2: " + evidence2);
+    }
+}
+3/
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.WriteLine("You step into the laboratory, surrounded by rows of sophisticated equipment and bubbling beakers.");
+        Console.WriteLine("Your mission is to uncover the secrets of a mysterious substance.");
+
+        // Declare variables for lab experiment results
+        double result1;
+        double result2;
+
+        // Begin your experiment
+        Console.WriteLine("\nYou set up your equipment and prepare to conduct the experiment.");
+
+        // Start a new block for conducting the experiment
+        {
+            // Declare a variable for the concentration of the substance
+            double concentration = 0.5;
+            // Perform the experiment and observe the first result
+            Console.WriteLine("\nYou conduct the first experiment and observe the results.");
+            result1 = concentration * 10;
+            // Store the first experiment result
+            result2 = result1 / 2;
+            Console.WriteLine("Result 1: " + result1);
+            
+            // concentration is accessible within this block
+            Console.WriteLine("Concentration of the substance: " + concentration);
+        }
+
+        // concentration variable is out of scope here
+        // Attempting to access concentration outside its block scope will result in a compilation error
+        // Console.WriteLine("You analyze the concentration of the substance: " + concentration);
+
+        // Continue your experiments
+        Console.WriteLine("\nWith the first results obtained, you continue your experiments to unravel the mystery.");
+        Console.WriteLine("Result 2: " + result2);
+    }
+}
+
+
